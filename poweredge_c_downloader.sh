@@ -17,7 +17,7 @@ function fetch() {
 	cd ${TMP}
 	TYPE=$2
 	MACHINE=$1
-	FETCHLIST=$(curl -s http://poweredgec.com/latest_fw.csv|grep $MACHINE | grep $TYPE |cut -d, -f6)
+	FETCHLIST=$(curl -s http://poweredgec.dell.com/latest_fw.csv|grep $MACHINE | grep $TYPE |cut -d, -f6)
 	FILE=$(echo $FETCHLIST | sed 's!.*/!!')
 	NAME=$(echo ${FILE} | sed 's/\(.*\)\..*/\1/')
 	FIRMWARE=$(echo ${NAME}| sed -e "s/^.*${TYPE}\([0-9]\+\).*/\1/")
