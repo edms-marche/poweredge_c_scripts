@@ -26,14 +26,17 @@ function fetch() {
 }
 
 # BMC
-fetch C6220 BMC
+#fetch C6220 BMC
+fetch C6110 BMC
 unzip -p ${TMP}/${FILE} ${NAME}/KCSflash/DCSFWU/linux/open/R${FIRMWARE}.dcs >> ${DEST}/${TYPE}_${DATE}.fw
 
 # Bios
-fetch C6220 BIOS
+#fetch C6220 BIOS
+fetch C6110 BIOS
 unzip -p ${TMP}/${FILE} *.hdr >> ${DEST}/${TYPE}_${DATE}.fw
 
 # FCB
-fetch C6220 FCB
+#fetch C6220 FCB
+fetch C6110 FCB
 unzip -p ${TMP}/${FILE} *${FIRMWARE}.bin >> ${DEST}/${TYPE}_${DATE}.fw
 
